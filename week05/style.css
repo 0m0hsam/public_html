@@ -1,0 +1,179 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-size: 62.5%; */
+}
+body{
+    background-color:#4CAF50;
+    color: white;
+    min-height: 100vh;
+    position: relative;
+    /* flex-direction: column; */
+}
+
+header{
+    position: relative;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Georgia,'Times New Roman', Times, serif;
+    height: 200px;
+    background-image: url('losgistis-all-you-need-to-know.jpg   ');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center center;
+    object-fit: cover;
+    color: #4CAF50;
+
+}
+
+header img{
+    position: absolute;
+    float: left;
+    margin-left: 20px;
+    margin-right: auto;
+    margin-top: 10px;
+    width: 10%;
+    max-width: 100%;
+    border-radius: 50px;
+    border: 3px solid#4CAF50;
+}
+
+#head_text{
+    display: inline-flex;
+    font-style: italic;
+    margin-top: 10px;
+    padding-left: 20px;
+
+}
+
+#head_text form{
+    position: absolute;
+    right: 50px;
+    padding-left: 50px;
+}
+
+#head_text input[type=text]{   
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+#head_text button{
+    padding: 10px;
+    border: none;
+    border-radius: 7px;
+}
+
+#head_name{
+    text-align: center;
+    padding: 0;
+    margin-top: 20px;
+    padding: 20px;
+    line-height: 40px;
+    
+}
+#head_name a{
+    text-decoration: none;
+    border: 2px solid white;
+    background: white;
+    padding: 5px 20px;
+    width: 100px;
+    border-radius: 10px;
+}
+
+section{
+    padding: 20px 0;
+}
+
+/* product section */
+.row img{
+    position: relative;
+    max-width: 100%;
+    height: auto;
+    border: none;
+    border-radius: 20px;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    align-items: center;
+    margin: auto;
+}
+
+.road,.air,.water,.text{
+    flex-basis: 50%;
+    padding: 1.6rem;
+}
+
+.row .text{
+    line-height: 30px;
+}
+
+.btn{
+    background-color: white;
+    color: #4CAF50;
+    padding: 8px 16px;
+    display: inline-block;
+    margin: 2rem 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+footer{
+    width: 100%;
+    background: white;
+    color: #4CAF50;
+    border: none;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    height: 60px;
+    text-align: center;
+    line-height: 30px;
+    bottom: 0;
+}
+
+/* meadia */
+@media only screen and (max-width:414px){
+    header{
+        width: 100%;
+        font-size: 12px;
+    }
+    #head_text form{
+        position: absolute;
+        right: 10px;
+        margin-top: 20px;
+        padding-left: 10px;
+    }
+    blockquote{
+        line-height: 20px;
+    }
+    section{
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .air img{
+        max-width: 93%;
+    }
+
+    footer{
+        font-size: 15px;
+    }
+    
+}
+
+@media only screen and (max-width: 768px){
+    .row{
+        flex-direction: column;
+    }
+    .text{
+        padding-top: 10px;       
+    }
+
+}

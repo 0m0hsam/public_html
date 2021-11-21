@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Incredible store to buy phones like Apple Iphone HTC Samsung">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="font-family:Georgia, 'Times New Roman', Times, serif;">
+    <header class="container">
+        <form class="orders" onsubmit="return false">
+            <label for="name">Fistname</label>
+            <input type="text" value="" name="firstname" id="firstname" required>
+            <label for="lastname">Lastname</label>
+            <input type="text" name="lastname" id="lastname" required>
+            <label for="address">Address</label>
+            <textarea name="address" id="address" cols="30" rows="10" required></textarea>
+            <label for="phone">Phone Number</label>
+            <input type="tel" name="tel" id="phone" required pattern="[0-9]" maxlength="10">
+            <label for="items">Select Item Into Your Cart & Enter Quantity</label><br>
+            
+            <div class="items">
+                <input type="checkbox" name="iphone" id="iphone">
+                <label for="iphone">Iphone &nbsp; $350</label>
+                <input type="number" name="number" id="number1" class="number" value="0" required pattern="[0-9]"><br>
+                <input type="checkbox" name="samsung" id="samsung">
+                <label for="samsung">Samsung &nbsp; $300</label>
+                <input type="number" name="number" id="number2" class="number" value="0" required pattern="[0-9]"><br>
+                <input type="checkbox" name="nokia" id="nokia">
+                <label for="nokia">Nokia &nbsp; $250</label>
+                <input type="number" name="number" id="number3" class="number" value="0" required pattern="[0-9]"><br>
+                <input type="checkbox" name="HTC" id="HTC">
+                <label for="HTC">HTC &nbsp; $200</label>
+                <input type="number" name="number" id="number4" class="number" value="0" required pattern="[0-9]">
+            </div>
+            <div class="btn1">
+                <button type="reset" id="btn" onfocus="document.getElementById('firstname').focus();total()">Clear Cart</button>
+                <button type="submit" id="btn" onclick="total()" >Total Cost</button>
+            </div>
+        </form>
+
+        <form class="payment" onsubmit="return false">
+            <fieldset>Payment Box
+                <input type="text" name="total" id="total" placeholder="" value="Total Cost" disabled>
+                <input type="text" name="" id="cardnumber" maxlength="19" placeholder="Enter your card number" 
+                required>
+                <div class="select_card">
+                    <input type="checkbox" name="" id="cardtype">
+                    <label for="verve">Verve</label>
+                    <input type="checkbox" name="" id="cardtype">
+                    <label for="master card">Master Card</label>
+                    <input type="checkbox" name="" id="cardtype">
+                    <label for="master card">American Express</label>
+                <input type="text" id="carddate" placeholder="Card Date" onclick="filldate();" maxlength="7"  required >
+                </div>
+                <button type="submit" id="pay" >Pay</button>
+            </fieldset>
+        </form>
+    </header>
+
+    <script>
+        function total(){
+            let iphone = document.getElementById("number1").value;
+            let samsung = document.getElementById("number2").value;
+            let nokia = document.getElementById("number3").value;
+            let htc = document.getElementById("number4").value;
+
+            let total= (350 * iphone) + (300 * samsung) + (250 * nokia) + (200 * htc);
+            document.getElementById("total").value= "Total Cost: $"+ total;
+        }
+
+
+            document.getElementById('cardnumber').addEventListener('input', function (e) {
+        e.target.value = e.target.value.replace(/[^\dA-Z]/g, '').replace(/(.{4})/g, '$1 ').trim();
+        });
+
+            document.getElementById('carddate').addEventListener('input', function (e) {
+        e.target.value = e.target.value.replace(/[^\dA-Z]/g, '').replace(/(.{2})/m, '$1/').trim();
+        });
+            document.getElementById('phone').addEventListener('input', function (e) {
+        e.target.value = e.target.value.replace(/[^\dA-Z]/g, '').replace(/(.{3})(.{3})(.{4})/g, '($1) - $2 - $3').trim();
+        });
+        </script>
+</body>
+</html>

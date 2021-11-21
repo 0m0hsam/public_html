@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+ display:grid;
+ grid-template-columns: 35%;
+ justify-content: space-evenly;
+ margin-top: 100px;
+ gap: 50px;
+}
+
+.container form{
+    display: block;
+    width: 100%;
+}
+
+.container input{
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+}
+
+.box1 input{
+    width: 100%;
+    padding: 30px;
+}
+
+.box2,.box3{
+    display: flex;
+    margin: auto;
+    max-width: 100%;
+}
+
+.box2 input{
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    margin-inline: 10px;
+
+}
+
+.box2 .label{
+    position: fixed ;
+}
+
+.label label{
+    text-align: center; 
+    margin-inline: 43px ;
+}
+
+.box3 button{
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    padding: 10px;
+    margin-inline: 10px;
+    background-color: cornflowerblue;
+    color: white;
+    font-size: 20px;
+}
+form h1{
+    position: absolute;
+    top: 25px;
+    font-size: 20px;
+    margin-left: 10%;
+    color: cornflowerblue;
+    margin-bottom: 10px;
+}
+
+form p{
+    position: absolute;
+    top: 50px;
+    color: red;
+    text-align:justify;
+}
+@media only screen and (max-width: 1000px){
+    .box2 .label{
+        position: fixed;
+    }
+    
+    .label label{
+        text-align: center;
+        margin-inline: 34px; 
+    }
+
+    .box1 input, p{
+        width: 400px;
+    }
+    .box2 input{
+        width: 115px;
+    }
+    .container{
+        justify-self: left;
+        margin-left: 0;
+        padding-left: 0;
+        left: 0;
+    }
+
+    .box3 button{
+        position: relative;
+        width: 100%;
+        font-size: 20px;
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
+}
+
+@media only screen and (max-width: 600px){
+    .box3 button{
+        padding-right: 100px;
+        margin-left: 20px;
+    }
+
+    .box3 #calculate{
+         padding-left: 30px;
+    }
+
+    .label label{
+        font-size: 10px;
+        word-break: break-all;
+        margin-left: 50px;
+    }
+
+    form h1{
+        margin-left: 20%;
+    }
+}
+

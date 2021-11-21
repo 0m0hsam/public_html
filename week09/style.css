@@ -1,0 +1,110 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: center;
+    column-gap: 30px;
+}
+
+header h3{
+    display: inline-block;
+    margin-inline: 60px;
+    text-decoration: none;
+}
+
+header pre{
+    font-size: 20px;
+    text-decoration-line: underline;
+    text-decoration: 5px solid red;
+    line-height: 30px;
+}
+
+body fieldset{
+    display: none;
+    padding: 10px;
+    background: skyblue;
+    border: 5px solid green;
+    border-radius: 10px;
+}
+
+body legend{
+    border-radius: 10px;
+    padding: 10px;
+    background:green;
+    color: white;
+    text-align: center;
+}
+
+
+/* Json style */
+section{
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+section input[type="text"]{
+    width: 400px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+section input{
+    background: skyblue;
+    color: white;
+    font-size: 25px;
+    border: none;
+}
+
+section hr{
+    padding: 1.5px 0;
+    border-radius: 20px;
+    background:white;
+    border: none;
+}
+section button{
+    margin-left: 30px;
+    margin-bottom: 30px;
+    display: inline;
+    width: 100px;
+    color: white;
+    border: none;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 15px;
+    background:skyblue;
+}
+
+#fieldset5{
+    font-size: 20px;
+    line-height: 30px;
+}
+@media only screen and (max-width: 1800px){
+    header{
+        grid-template-columns: auto auto;
+    }
+    header h3{
+        margin-top: 30px;
+        text-decoration: none;
+    }
+}
+
+@media only screen and (max-width: 850px){
+    header{
+        grid-template-columns: auto;
+    }
+    
+    section button{
+        display: block;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 400px;   
+    }
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Morgage Calculate</title>
+</head>
+<body style="font-family:Georgia, 'Times New Roman', Times, serif;">
+    <header class="container">
+        <form>
+            <h1>Morgage Calculator</h1>
+            <p id="error"></p>
+            <div class="box1"><input type="text" name="" id="payment" value="" placeholder="Payment Dashboard"></div>
+            <div class="box2">
+                <div class="label">
+                    <label for="">APR</label>
+                    <label for="">Loan Term</label>
+                    <label for="">Loan Amount</label>
+                </div>
+                    <input type="text" name="" id="apr" value="">
+                    <input type="text" name="" id="term" value="">
+                    <input type="text" name="" id="amount" value="">
+                </div>
+            <div class="box3">
+                <button type="button" id="calculate" onclick="input()">Calculate</button>
+                <button type="button" id="clear" onclick="
+                document.getElementById('apr').value = '';
+                document.getElementById('term').value = '';
+                document.getElementById('amount').value ='';
+                document.getElementById('payment').value= '';
+                document.getElementById('payment').value= '';
+                document.getElementById('error').innerHTML= '';
+                ">Clear</button>
+            </div>
+        </form>
+    </header>
+    
+    <script>
+        function input(){
+            let apr = parseFloat(document.getElementById("apr").value) / 100;
+            let loanTerm = parseInt(document.getElementById("term").value);
+            let P= parseInt(document.getElementById("amount").value);
+            
+            
+            if((apr < 0) || (apr > 25) || isNaN(apr)){
+               return document.getElementById('error').innerHTML="Apr must not be between 0 and 25.00%, not empty and be a number",
+               document.getElementById('apr').style.borderBlock="5px solid red";
+            }
+            else if(isNaN(loanTerm) || loanTerm <= 0 || loanTerm >= 40){
+               return document.getElementById('error').innerHTML="Loan term must be greater than 0 and less than 40, not empty and be a number",
+               document.getElementById('term').style.borderBlock="5px solid red";
+            }
+            else if(isNaN(P)){
+               return document.getElementById('error').innerHTML= "Enter a Numuber",
+               document.getElementById('amount').style.borderBlock="5px solid red";
+            }
+            else{
+                return document.getElementById("payment").value= P*(apr/12)*(1+apr/12)^(loanTerm*12)/((1+apr/12)^(loanTerm*12)-1);  
+            }
+        }
+    </script>
+</body>
+</html>

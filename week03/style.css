@@ -1,0 +1,61 @@
+header *{
+    background-color: rgba(1, 1, 20, 0.7);
+    width: 100%;
+    color: whitesmoke;
+    margin: auto;
+}
+
+hr{
+    padding: 3px,0;
+    background-color: white;
+    margin: auto;
+}
+
+#link{
+    text-align: center;
+    margin:auto;
+    padding: 0, 3px;
+    text-decoration-color: none;
+    text-decoration: none;
+}
+
+#logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80px;   
+} 
+
+footer{
+    background-color: black;
+    color: white;
+}
+
+form{
+    display: block;
+    box-sizing: border-box;
+}
+
+#form-input{
+    padding: 12px, 20px;
+    margin: 15px, 0;
+} 
+
+#select{
+    display: inline-flex;
+    padding-right: 10px;
+}
+textarea{
+    margin-left: 0;
+    border-radius: 4px;
+    resize: none;
+}
+
+button{
+    display: inline-block;
+    padding: 14px,40px;
+    width: 80px;
+    border: none;
+    background-color: whitesmoke;
+    border-radius: 6px;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samuel Jonathan's Home Page </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="font-family:Georgia, 'Times New Roman', Times, serif;">
+    <header>
+            <div class="country">
+                <a href="#"><h3 onclick="canada()">Canada</h3></a>
+                <fieldset id="fieldset1">
+                    <legend>Towns and Population</legend>
+                    <pre id="canadaData"></pre>
+                </fieldset>
+            </div>
+            <div class="country">
+                <a href="#"><h3 onclick="mexico()">Mexico</h3></a>
+                <fieldset id="fieldset2">
+                    <legend>Towns and Population</legend>
+                    <pre id="mexicoData"></pre>                
+                </fieldset> 
+            </div>
+            <div class="country">
+                <a href="#"><h3 onclick="russia()">Russia</h3></a>
+                <fieldset id="fieldset3">
+                    <legend>Towns and Population</legend>
+                    <pre id="russiaData"></pre>
+                </fieldset>
+            </div>
+            <div class="country">
+                <a href="#"><h3 onclick="usa()">Usa</h3></a>
+                <fieldset id="fieldset4">
+                    <legend>Towns and Population</legend>
+                    <pre id="usaData"></pre>
+                </fieldset>
+            </div>
+    </header>
+
+    <section class="json">
+        <form method="post" onsubmit="return false">
+            <input type="text" name="search" id="userInput" required>
+            <button type="submit" onclick="jsonData()">Search</button>
+        </form>
+        <fieldset id="fieldset5">
+            <legend>STUDENT DATA DASHBOAD</legend>
+            <div id="data"></div>
+        </fieldset>
+    </section>
+    <script src="javascript.js"></script>
+</body>
+</html>
