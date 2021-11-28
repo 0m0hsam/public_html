@@ -1,0 +1,191 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background:rgba(100, 20, 20, 2);
+}
+
+.container{
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: left;  
+    margin: auto;
+    margin-left: 50px;
+    margin-top: 10px;
+}
+
+.container form{
+    display: inline-block;
+}
+
+.container input,textarea{
+    display: block;
+    width: 500px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.container textarea{
+    resize: none;
+    height: 70px;
+}
+
+.container label{
+    color: whitesmoke;
+    display: inline-flex;
+    padding-left: 15px;
+    text-indent: -15px;
+    line-height: 5px;
+  }
+
+.container .number{
+    display: inline-block;
+    width: 50px;
+    margin-left: 58px;
+  }
+  
+.container input[type="checkbox"]{
+    display: inline-block;
+    width: 15px;
+    /* height: 90px; */
+    padding: 0;
+    margin: 0;
+    /* vertical-align: bottom; */
+    position: relative;
+    top: -1px;
+    text-decoration-color: red;
+  }
+
+.container #number1{
+    margin-left: 75px;
+}
+.container #number3{
+    margin-left: 80px;
+}
+.container #number4{
+    margin-left: 88px;
+}
+
+/* Payment & Total */
+.container .payment{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    margin-top: 20px;
+}
+
+.payment fieldset{
+    padding: 5px;
+    text-align: center;
+    border: 5px solid white;
+    color: white;
+    border-radius: 10px;
+}
+
+.container #cardnumber{
+    width: 400px;
+}
+
+.container .select_card{
+    display: block;
+    margin-left: -100px;
+    color: black;
+    left: 0;
+}
+
+.payment input[type="radio"]{
+    display: inline;
+    margin: 0 -145px;
+}
+
+.payment label{
+    display: inline;
+    padding-left: 0;
+    margin: 0 -100px;
+}
+
+.payment input[id="carddate"]{
+    border: none;
+    display: inline;
+    width: 80px;
+    padding: 10xp;
+    margin-left: 100px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.payment input[id="carddate"] {
+  -moz-appearance: textfield;
+}
+
+.orders .btn1{
+    margin-left: 230px;
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+.orders button{
+    margin-inline: 10px;
+    padding: 7px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: large;
+    color: rgb(173, 88, 88);
+}
+
+
+.payment #pay{
+    padding: 8px 40px;
+    border: none;
+    border-radius: 5px;
+    font-size: large;
+    color: rgb(173, 88, 88);
+}
+
+.payment #total{
+    background-color: white;
+    border: 5px solid black;
+    font-size: 30px;
+    width: 400px;
+}
+
+.orders input[class="number"]{
+    font-size: 18px;
+}
+
+/* responsivness */
+@media only screen and (max-width:1050px){
+    body{
+        display: block;
+    }
+    .container .payment{
+        position: relative;
+    }
+
+    .container .payment{
+        right: 5px;
+        margin-right: 0;
+    }
+    
+}
+
+@media only screen and (max-width:600px){
+    .btn1 #btn{
+        margin-right: 5px;
+        margin-bottom: 20px;
+    }
+
+    .container .orders{
+        margin-right: 50px;
+    }
+}
