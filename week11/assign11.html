@@ -10,7 +10,7 @@
 </head>
 <body style="font-family:Georgia, 'Times New Roman', Times, serif;">
     <header class="container">
-        <form class="orders">
+        <form method="post" action="assign11.php" class="orders">
             <label for="name">Fistname</label>
             <input type="text" value="" name="firstname" id="firstname" required>
             <label for="lastname">Lastname</label>
@@ -24,20 +24,20 @@
             <div class="items">
                 <input type="checkbox" name="iphone" id="iphone">
                 <label for="iphone">Iphone &nbsp; $350</label>
-                <input type="number" name="samsung" id="number1" class="number" value="" required pattern="[0-9]"><br>
+                <input type="number" name="samsung" id="number1" class="number" value="0" required pattern="[0-9]"><br>
                 <input type="checkbox" name="" id="samsung">
                 <label for="samsung">Samsung &nbsp; $300</label>
-                <input type="number" name="nokia" id="number2" class="number" value="" required pattern="[0-9]"><br>
+                <input type="number" name="nokia" id="number2" class="number" value="0" required pattern="[0-9]"><br>
                 <input type="checkbox" name="" id="nokia">
                 <label for="nokia">Nokia &nbsp; $250</label>
-                <input type="number" name="HTC" id="number3" class="number" value="" required pattern="[0-9]"><br>
+                <input type="number" name="HTC" id="number3" class="number" value="0" required pattern="[0-9]"><br>
                 <input type="checkbox" name="" id="HTC">
                 <label for="HTC">HTC &nbsp; $200</label>
-                <input type="number" name="number4" id="number4" class="number" value="" required pattern="[0-9]">
+                <input type="number" name="number4" id="number4" class="number" value="0" required pattern="[0-9]">
             </div>
             <div class="payment">
                 <fieldset>Payment Box
-                    <input type="text" name="total" id="total" placeholder="" value="Total Cost" disabled>
+                    <input type="text" name="total" id="total" placeholder="Total Cost" value="" disabled>
                     <input type="text" name="cardnumber" id="cardnumber" maxlength="19" placeholder="Enter your card number" 
                     required>
                     <div class="select_card">
@@ -50,13 +50,35 @@
                         <input type="text" id="carddate" placeholder="Card Date" onclick="filldate();" maxlength="7"  required >
                     </div>
                     <button type="reset" id="btn" onfocus="document.getElementById('firstname').focus();total()">Clear Cart</button>
+                    <p class="bnttotal" onclick="total();">Total Cost</p>
                     <button type="submit" id="pay" >Pay</button>
-                </form>
-                <button type="button" id="btn" onclick="total();">Total Cost</button>
                 </fieldset>
             </div>
+        </form>
     </header>
 
-    <script src="form.js"></script>
+    <script>
+        function total(){
+            let iphone = document.getElementById("number1").value;
+            let samsung = document.getElementById("number2").value;
+            let nokia = document.getElementById("number3").value;
+            let htc = document.getElementById("number4").value;
+
+            let total= (350 * iphone) + (300 * samsung) + (250 * nokia) + (200 * htc);
+            document.getElementById("total").value= "Total Cost: $"+ total;
+        }
+
+
+            document.getElementById('cardnumber').addEventListener('input', function (e) {
+        e.target.value = e.target.value.replace(/[^\dA-Z]/g, '').replace(/(.{4})/g, '$1 ').trim();
+        });
+
+            document.getElementById('carddate').addEventListener('input', function (e) {
+        e.target.value = e.target.value.replace(/[^\dA-Z]/g, '').replace(/(.{2})/m, '$1/').trim();
+        });
+            document.getElementById('phone').addEventListener('input', function (e) {
+        e.target.value = e.target.value.replace(/[^\dA-Z]/g, '').replace(/(.{3})(.{3})(.{4})/g, '($1) - $2 - $3').trim();
+        });
+    </script>
 </body>
 </html>

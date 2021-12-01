@@ -22,6 +22,10 @@ body{
     display: inline-block;
 }
 
+.container input{
+    border: none;
+}
+
 .container input,textarea{
     display: block;
     width: 500px;
@@ -140,6 +144,16 @@ input::-webkit-inner-spin-button {
     border: none;
     border-radius: 5px;
     font-size: large;
+    color: rgb(173, 88, 88);
+}
+
+.orders p{
+    font-size: large;
+    display: inline;
+    padding: 7px 15px;
+    width: 50px;
+    border-radius: 5px;
+    background: white;
     color: rgb(173, 88, 88);
 }
 
