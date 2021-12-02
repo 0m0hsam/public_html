@@ -12,41 +12,41 @@
     <header class="container">
         <form method="post" action="assign11.php" class="orders">
             <label for="name">Fistname</label>
-            <input type="text" value="" name="firstname" id="firstname" required>
+            <input type="text" value="" name="Firstname" id="firstname" required>
             <label for="lastname">Lastname</label>
-            <input type="text" name="lastname" id="lastname" required>
+            <input type="text" name="Lastname" id="lastname" required>
             <label for="address">Address</label>
-            <textarea name="address" id="address" cols="30" rows="10" required></textarea>
+            <textarea name="Address" id="address" cols="30" rows="10" required></textarea>
             <label for="phone">Phone Number</label>
-            <input type="tel" name="tel" id="phone" required>
+            <input type="tel" name="Tel" id="phone" maxlength="10" required>
             <label for="items">Select Item Into Your Cart & Enter Quantity</label><br>
             
             <div class="items">
                 <input type="checkbox" name="iphone" id="iphone">
                 <label for="iphone">Iphone &nbsp; $350</label>
-                <input type="number" name="samsung" id="number1" class="number" value="0" required pattern="[0-9]"><br>
+                <input type="number" name="Iphone" id="number1" class="number" value="0" required pattern="[0-9]"><br>
                 <input type="checkbox" name="" id="samsung">
                 <label for="samsung">Samsung &nbsp; $300</label>
-                <input type="number" name="nokia" id="number2" class="number" value="0" required pattern="[0-9]"><br>
+                <input type="number" name="Samsung" id="number2" class="number" value="0" required pattern="[0-9]"><br>
                 <input type="checkbox" name="" id="nokia">
                 <label for="nokia">Nokia &nbsp; $250</label>
-                <input type="number" name="HTC" id="number3" class="number" value="0" required pattern="[0-9]"><br>
+                <input type="number" name="Nokia" id="number3" class="number" value="0" required pattern="[0-9]"><br>
                 <input type="checkbox" name="" id="HTC">
                 <label for="HTC">HTC &nbsp; $200</label>
-                <input type="number" name="number4" id="number4" class="number" value="0" required pattern="[0-9]">
+                <input type="number" name="HTC" id="number4" class="number" value="0" required pattern="[0-9]">
             </div>
             <div class="payment">
                 <fieldset>Payment Box
                     <input type="text" name="total" id="total" placeholder="Total Cost" value="" disabled>
-                    <input type="text" name="cardnumber" id="cardnumber" maxlength="19" placeholder="Enter your card number" 
+                    <input type="text" name="Card number" id="cardnumber" maxlength="19" placeholder="Enter your card number" 
                     required>
                     <div class="select_card">
-                        <input type="radio" name="cardtype" value="Verve" id="cardtype">
+                        <input type="radio" name="Card type" value="Verve" id="vCard" required>
                         <label for="verve">Verve</label>
-                        <input type="radio" name="cardtype" value="Master Card" id="cardtype">
+                        <input type="radio" name="Card type" value="Master Card" id="mCard">
                         <label for="master card">Master Card</label>
-                        <input type="radio" name="cardtype" value="American Express" id="cardtype">
-                        <label for="master card">American Express</label>&nbsp;&nbsp;
+                        <input type="radio" name="Card type" value="American Express" id="aCard">
+                        <label for="master card">American Express</label>
                         <input type="text" id="carddate" placeholder="Card Date" onclick="filldate();" maxlength="7"  required >
                     </div>
                     <button type="reset" id="btn" onfocus="document.getElementById('firstname').focus();total()">Clear Cart</button>
@@ -65,7 +65,7 @@
             let htc = document.getElementById("number4").value;
 
             let total= (350 * iphone) + (300 * samsung) + (250 * nokia) + (200 * htc);
-            document.getElementById("total").value= "Total Cost: $"+ total;
+            document.getElementById("total").value = "Total Cost: $"+ total;
         }
 
 
@@ -77,7 +77,7 @@
         e.target.value = e.target.value.replace(/[^\dA-Z]/g, '').replace(/(.{2})/m, '$1/').trim();
         });
             document.getElementById('phone').addEventListener('input', function (e) {
-        e.target.value = e.target.value.replace(/[^\dA-Z]/g, '').replace(/(.{3})(.{3})(.{4})/g, '($1) - $2 - $3').trim();
+        e.target.value = e.target.value.replace(/[^\dA-Z]/g, '').replace(/(.{3})(.{3})(.{4})/g, '$1-$2-$3').trim();
         });
     </script>
 </body>
