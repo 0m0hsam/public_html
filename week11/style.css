@@ -56,10 +56,8 @@ body{
 .container input[type="checkbox"]{
     display: inline-block;
     width: 15px;
-    /* height: 90px; */
     padding: 0;
     margin: 0;
-    /* vertical-align: bottom; */
     position: relative;
     top: -1px;
     text-decoration-color: red;
@@ -97,28 +95,26 @@ body{
 
 .container .select_card{
     display: block;
-    margin-left: -100px;
+    margin-left: -2px;
     color: black;
     left: 0;
 }
 
 .payment input[type="radio"]{
-    display: inline;
-    margin: 0 -145px;
+    display: inline-block;
+    width: 15px;
+    position: relative;
+    top: -1px;
+    transform: scale(1.5);
+
 }
 
-.payment label{
-    display: inline;
-    padding-left: 0;
-    margin: 0 -100px;
-}
 
 .payment input[id="carddate"]{
     border: none;
     display: inline;
     width: 80px;
     padding: 10xp;
-    margin-left: 100px;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -181,6 +177,10 @@ input::-webkit-inner-spin-button {
 @media only screen and (max-width:1050px){
     body{
         display: block;
+    }
+
+    container .select_card{
+        margin-left: -100px;
     }
     .container .payment{
         position: relative;

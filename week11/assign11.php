@@ -22,7 +22,7 @@ session_start();
             font-size: 22px;
         }
 
-        .review #btn{
+        .review a{
             font-size: large;
             display: inline;
             padding: 7px 15px;
@@ -30,31 +30,31 @@ session_start();
             border-radius: 5px;
             background: white;
             color: rgb(173, 88, 88);
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
 <div class="review">
     <?php
-        $firstname = $_POST['firstname'];
         $count = 0;
         foreach ($_POST as $key => $value)
         {
         $count += 1;
-            if($count == 4){
+            if($count == 5){
                 echo "<h4>Product on your cart and quantity selected</h4>";
             } 
                 echo "<p><label>$key: </label>$value</p>";
         }
+        echo $_POST["total"];
+
+        $_SESSION["Firstname"]= $_POST["Firstname"];
     ?>
     <div>
-        <p id="btn">Cancel Order</p>
-        <a href="asign11_a.php?link2=$firstname"><p id="btn">Purchase</p></a>
-        <?php
-            if(isset($_GET['link2'])){
-                $_SESSION['link2'] = $firstname;
-            }
-        ?>
+        <a href="assign11_a.php?cancel=cancel">Cancel Order</a>
+    
+        <a href="assign11_a.php?purchase=purchase">Purchase</a>
+        
     </div>
 </div>
 
