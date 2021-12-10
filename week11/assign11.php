@@ -46,7 +46,6 @@ session_start();
             } 
                 echo "<p><label>$key: </label>$value</p>";
         }
-        echo $_POST["total"];
 
         $_SESSION["Firstname"]= $_POST["Firstname"];
     ?>

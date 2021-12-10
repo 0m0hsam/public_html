@@ -4,75 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samuel Jonathan's Home Page </title>
+    <link rel="stylesheet" href="style.css">
+    <title>Mileage Calculate</title>
 </head>
 <body style="font-family:Georgia, 'Times New Roman', Times, serif;">
-    <header>
-        <div>
-            <div style="text-align: left;">
-                <h4><i>Welcome to Samuel Jonathan's Assignment Page</i></h4>
+    <header class="container">
+        <form action="#" method="GET" onsubmit="return false">
+            <h1>Mileage Calculator</h1>
+            <p id="error"></p>
+            <div class="box1">
+                <div id="data"></div><br>
             </div>
-            <nav>
-                <div style="color: blue;">
-                    <img src="./sam.jpg" alt="student picture" style="float:inline-end; width: 3cm;height: 3cm;">
-                    <h4>My student details</h4>
-                    <p>Name: Samuel Jonathan Omoh</p>
-                    <p>Major: Applied Technology</p>
-                    <p>Home Country: Nigeria</p>
-                    <span></span>
+            <div class="box2">
+                <div class="label">
+                    <label for="" id="label1">startCity</label>
+                    <label for="" id="label2">startState</label>
+                    <label for="" id="label3">endCity</label>
+                    <label for="" id="label4">endState</label>
                 </div>
-            </nav>
-            <div style="text-align: center;">
-                <h1>CS 213 Week 12 Assignment</h1>
-                <hr style="height: 2px; background-color: blue;">
+                    <input type="text" name="startCity" id="startCity" value="" required>
+                    <input type="text" name="startState" id="startState" value="" required>
+                    <input type="text" name="endCity" id="endCity" value="" required>
+                    <input type="text" name="endState" id="endState" value="" required>
+                </div>
+            <div class="box3">
+                <button type="submit" id="calculate" onclick="output()">Calculate</button>
+                <button type="button" id="clear" onclick="
+                document.getElementById('startCity').value ='';
+                document.getElementById('startState').value ='';
+                document.getElementById('endCity').value ='';
+                document.getElementById('endState').value ='';
+                document.getElementById('payment').value= '';
+                document.getElementById('payment').value= '';
+                document.getElementById('error').innerHTML= '';
+                ">Clear</button>
             </div>
-        </div>
+        </form>
     </header>
-
-    <main style="font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
-        <!--Assignment links-->
-        <div style="text-align:center">
-            <ul style="display: inline-block;"> 
-                <li>
-                    <a href="./week013/assign13.html">
-                        <h4> Week 12 Assignment</h4>
-                    </a>
-                </li>
-            </ul>
-                
-
-        <div>
-            <!--course discription table-->
-            <fieldset style="border: 2px solid blue;color: blue;">
-                    <legend><b> Class Table Table Schedule</b></legend>
-                    <table style="width: 100%;border: 2px solid blue;text-align: left;padding: 8px;color: brown;">
-                        <tr style="border: 3px solid black;">
-                            <th>Course</th>
-                            <th>Course Description</th>
-                            <th>Class Time</th>
-                            <th>Class Location</th>
-                        </tr>
-                        <tr>
-                            <td>CS213</td>
-                            <td>Web Engineering 1</td>
-                            <td>Tuesday 6:30pm MTS</td>
-                            <td>Zoom</td>
-                        </tr>
-                        <tr>
-                            <td>CS 246</td>
-                            <td>Software Design & Development</td>
-                            <td>Tuesday 6:30pm MTS</td>
-                            <td>Zoom</td>
-                        </tr>
-                        <tr>
-                            <td>GS 170</td>
-                            <td>Career Development</td>
-                            <td>No fix time</td>
-                            <td>Byu Online Class Room</td>
-                        </tr>
-                    </table>
-            </fieldset>
-        </div>
-    </main>
+    
+    <script src="mileage.js"></script>
 </body>
 </html>

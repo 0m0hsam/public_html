@@ -74,7 +74,7 @@
         });
 
             document.getElementById('carddate').addEventListener('input', function (e) {
-        e.target.value = e.target.value.replace(/[^\dA-Z]/g, '').replace(/(.{2})/m, '$1/').trim();
+        e.target.value = e.target.value.replace(/[^\dA-Z]{1-12}/g, '').replace(/(.{2})(.{4})/g, '$1/$2').trim();
         });
             document.getElementById('phone').addEventListener('input', function (e) {
         e.target.value = e.target.value.replace(/[^\dA-Z]/g, '').replace(/(.{3})(.{3})(.{4})/g, '$1-$2-$3').trim();
